@@ -7,5 +7,6 @@ import { CompanySchema } from './dto/models/company.model';
  imports  : [MongooseModule.forFeature([{name : "Company", schema : CompanySchema}])] ,
  controllers: [CompaniesController],
   providers: [CompaniesService],
+  exports : [CompaniesService]
 })
 export class CompaniesModule {}

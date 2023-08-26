@@ -1,15 +1,17 @@
-import {IsString, IsNotEmpty} from "class-validator"
+import {IsString, IsNotEmpty, Max} from "class-validator"
+import { ObjectId } from "mongoose";
 
 export class CreatePromocodeDto {
     @IsString()
     @IsNotEmpty()
-    name : string;
+    @Max(16)
+    promo : string;
 
     @IsString()
     @IsNotEmpty()
-    companyId : string
+    companyId : ObjectId
     
     @IsString()
     @IsNotEmpty()
-    userId : string
+    userId : ObjectId
 }
